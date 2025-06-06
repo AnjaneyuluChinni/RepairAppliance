@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Appliance Repair Services</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        @keyframes rotate-scale-down-diag-2 {
+            0% { transform: scale(1) rotate3d(-1, 1, 0, 0deg); }
+            50% { transform: scale(0.5) rotate3d(-1, 1, 0, 180deg); }
+            100% { transform: scale(1) rotate3d(-1, 1, 0, 360deg); }
+        }
+
+        .rotate-scale-down-diag-2-normal {
+            transition: transform 0.5s ease;
+            border-radius: 0 100px 0 100px !important;
+        }
+        
+        .rotate-scale-down-diag-2-normal:hover {
+            transform: rotate(10deg);
+        }
+
+        /* Styles for Brand Cards Section */
+        #brands-showcase {
+            background-color: black;
+            color: white;
+        }
+
+        .brand-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            /* Initial state for GSAP animation */
+            opacity: 0;
+        }
+
+        /* Removed hover effect */
+
+    </style>
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="text-primary fw-bold">Premium</span><br>
+                Appliance Repair
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#services" id="navbarDropdownServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownServices">
+                            <li><a class="dropdown-item" href="#dishwasher-repair">Dishwasher Repair</a></li>
+                            <li><a class="dropdown-item" href="#dryer-repair">Dryer Repair</a></li>
+                            <li><a class="dropdown-item" href="#ev-charger-repair">EV Charger Repair</a></li>
+                            <li><a class="dropdown-item" href="#microwave-repair">Microwave Repair</a></li>
+                            <li><a class="dropdown-item" href="#ice-maker-repair">Ice Maker Repair</a></li>
+                            <li><a class="dropdown-item" href="#freezer-repair">Freezer Repair</a></li>
+                            <li><a class="dropdown-item" href="#hvac-repair">HVAC Repair</a></li>
+                            <li><a class="dropdown-item" href="#oven-repair">Oven Repair</a></li>
+                            <li><a class="dropdown-item" href="#refrigerator-repair">Refrigerator Repair</a></li>
+                            <li><a class="dropdown-item" href="#stove-repair">Stove Repair</a></li>
+                            <li><a class="dropdown-item" href="#wine-cooler-repair">Wine Cooler Repair</a></li>
+                            <li><a class="dropdown-item" href="#washing-machine-repair">Washing Machine Repair</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#locations" id="navbarDropdownLocations" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Locations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownLocations">
+                            <li><a class="dropdown-item" href="#burbank-ca">Burbank CA</a></li>
+                            <li><a class="dropdown-item" href="#el-monte-ca">El Monte CA</a></li>
+                            <li><a class="dropdown-item" href="#sherman-oaks-ca">Sherman Oaks CA</a></li>
+                            <li><a class="dropdown-item" href="#glendale-ca">Glendale CA</a></li>
+                            <li><a class="dropdown-item" href="#long-beach-ca">Long Beach CA</a></li>
+                            <li><a class="dropdown-item" href="#north-hollywood-ca">North Hollywood CA</a></li>
+                            <li><a class="dropdown-item" href="#pasadena-ca">Pasadena CA</a></li>
+                            <li><a class="dropdown-item" href="#santa-monica-ca">Santa Monica CA</a></li>
+                            <li><a class="dropdown-item" href="#van-nuys-ca">Van Nuys CA</a></li>
+                            <li><a class="dropdown-item" href="#west-los-angeles-ca">West Los Angeles CA</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#brands" id="navbarDropdownBrands" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Brands
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownBrands">
+                            <li><a class="dropdown-item" href="#sub-zero-repair">Sub-Zero Repair</a></li>
+                            <li><a class="dropdown-item" href="#viking-repair">Viking Repair</a></li>
+                            <li><a class="dropdown-item" href="#thermador-repair">Thermador Repair</a></li>
+                            <li><a class="dropdown-item" href="#miele-repair">Miele Repair</a></li>
+                            <li><a class="dropdown-item" href="#wolf-repair">Wolf Repair</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-3" href="#book">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intro Details Section -->
+    <section class="intro-details-section bg-black text-white text-center content-below-fixed-navbar">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-1">Appliance Repair Los Angeles CA</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p class="lead mb-1">At <strong>Sub-Zero & Viking Repair of Los Angeles</strong>, we specialize in expert repairs for high-end kitchen appliances, ensuring top performance and longevity. With <strong>trusted service since 2014</strong>, we provide fast, reliable solutions using genuine parts for lasting results.</p>
+                </div>
+            </div>
+            <div class="text-center my-4">
+                <h2 class="display-3 fw-bold mb-2">(310) 726-3218</h2>
+                <div class="d-flex justify-content-center gap-3 mt-3">
+                    <a href="tel:+13107263218" class="btn btn-light btn-lg">
+                        <i class="fas fa-phone-alt me-2"></i> Call Now
+                    </a>
+                    <a href="#book" class="btn btn-light btn-lg">
+                        <i class="far fa-calendar-alt me-2"></i> Book an Appointment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section content-below-header">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Expert Appliance Repair Services</h1>
+                    <p class="lead mb-4">Professional repair services for all major appliance brands. Fast, reliable, and affordable solutions for your home.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#book" class="btn btn-primary btn-lg">Book Service</a>
+                        <a href="#contact" class="btn btn-outline-primary btn-lg">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="./Images/download.jpeg" alt="Appliance Repair" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+
+            <!-- Stats Section with Background Image -->
+            <div class="stats-background-section py-3">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                             <i class="fas fa-home fa-3x mb-3"></i>
+                             <h3>Over 8,000 Happy Customers Served</h3>
+                             <p>Sub-Zero & Viking Repair of Los Angeles: Proudly serving 8,000+ satisfied homeowners and counting.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <i class="fas fa-clock fa-3x mb-3"></i>
+                            <h3>10+ Years of Service</h3>
+                            <p>With over 10 years of expertise, Sub-Zero & Viking Repair of Los Angeles delivers trusted appliance repair services.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                             <i class="fas fa-bell fa-3x mb-3"></i>
+                             <h3>Quick & Quality Service</h3>
+                             <p>Swift and Top-Notch Service from Sub-Zero & Viking Repair of Los Angeles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Showcase Section -->
+    <section id="brands-showcase" class="py-3">
+        <div class="container">
+            <h2 class="text-center mb-5">Brands We Service</h2>
+            <div class="row justify-content-center text-center g-4">
+                <div class="col-6 col-md-2">
+                    <div class="brand-card">
+                        <img src="./Images/download.jpeg" alt="Sub-Zero Logo" class="img-fluid mb-2 brand-logo">
+                        <a href="#sub-zero-repair">Read More</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="brand-card">
+                        <img src="./Images/OIP (1).jpeg" alt="Viking Logo" class="img-fluid mb-2 brand-logo">
+                        <a href="#viking-repair">Read More</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="brand-card">
+                        <img src="./Images/OIP.jpeg" alt="Thermador Logo" class="img-fluid mb-2 brand-logo">
+                        <a href="#thermador-repair">Read More</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="brand-card">
+                        <img src="./Images/OIP.jpeg" alt="Miele Logo" class="img-fluid mb-2 brand-logo">
+                        <a href="#miele-repair">Read More</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="brand-card">
+                        <img src="./Images/download (1).jpeg" alt="Wolf Logo" class="img-fluid mb-2 brand-logo">
+                        <a href="#wolf-repair">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-3">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Dishwasher Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#dishwasher-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Dryer Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#dryer-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">EV Charger Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#ev-charger-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Microwave Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#microwave-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Ice Maker Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#ice-maker-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Freezer Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#freezer-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">HVAC Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#hvac-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Oven Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#oven-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Refrigerator Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#refrigerator-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Stove Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#stove-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Wine Cooler Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#wine-cooler-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">Washing Machine Repair</h3>
+                            <p>Expert repair services.</p>
+                            <a href="#washing-machine-repair">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-3 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Why Choose Us?</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-primary me-2"></i>
+                            Certified and experienced technicians
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-primary me-2"></i>
+                            Same-day service available
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-primary me-2"></i>
+                            Warranty on all repairs
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-primary me-2"></i>
+                            Competitive pricing
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="./Images/OIP (1).jpeg" alt="About Us" class="img-fluid rounded-3 shadow rotate-scale-down-diag-2-normal">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-3">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form id="contactForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Your Phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h3 class="h5 mb-4">Get in Touch</h3>
+                        <p><i class="fas fa-phone me-2"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope me-2"></i> info@appliancerepair.com</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Repair Street, City, State 12345</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3 mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Premium Appliance Repair</h5>
+                    <p>Professional appliance repair services for your home.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2024 Premium Appliance Repair. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+
+    <!-- Sticky Call to Action Bar -->
+    <div class="sticky-cta">
+        <div class="container d-flex justify-content-between align-items-center">
+            <p class="mb-0 me-3">Need appliance repair? Call us now!</p>
+            <a href="tel:+15551234567" class="btn btn-light btn-sm">Call Now (555) 123-4567</a>
+        </div>
+    </div>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray(".brand-card").forEach((card, index) => {
+            gsap.fromTo(card,
+                {
+                    x: index % 2 === 0 ? -100 : 100,
+                    opacity: 0
+                },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html> 

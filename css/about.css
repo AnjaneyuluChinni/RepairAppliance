@@ -1,0 +1,144 @@
+
+/* About Page Specific Styles */
+.about-page-content {
+    background-color: #fff; /* White background for the main content */
+    padding-top: 2rem; /* Space below navbar */
+}
+
+.about-page-content .container {
+    padding-top: 2rem; /* Further reduce top padding inside container */
+    padding-bottom: 2rem; /* Further reduce bottom padding inside container */
+}
+
+.about-page-content h2 {
+    font-size: 2.5rem; /* Adjust heading size */
+    margin-bottom: 1.5rem; /* Space below heading */
+    color: var(--text-color); /* Use text color variable */
+}
+
+.about-page-content h3 {
+    font-size: 1.8rem; /* Adjust heading size */
+    margin-bottom: 1rem; /* Space below heading */
+    color: var(--text-color); /* Use text color variable */
+}
+
+.about-page-content h4 {
+    font-size: 1.4rem; /* Adjust heading size */
+    margin-bottom: 0.8rem; /* Space below heading */
+    color: var(--text-color); /* Use text color variable */
+}
+
+.about-page-content .row.mt-5 {
+    margin-top: 1.5rem !important; /* Further reduce top margin for stats section */
+}
+
+.about-page-content hr.my-5 {
+    margin-top: 2.5rem !important; /* Further reduce margin */
+    margin-bottom: 2.5rem !important; /* Further reduce margin */
+    border-top: 1px solid #ccc; /* Light grey border */
+}
+
+.about-page-content ul {
+    list-style: disc; /* Use disc bullets */
+    padding-left: 1.5rem; /* Indent lists */
+    margin-bottom: 1rem; /* Further reduce margin below lists */
+}
+
+.about-page-content ul li {
+    margin-bottom: 0.3rem; /* Further reduce space between list items */
+    line-height: 1.5; /* Adjust line height */
+}
+
+/* Specific styling for the Problems We Fix section columns */
+.about-page-content .row.justify-content-center .row > [class^="col-md-"] {
+    margin-bottom: 2rem; /* Space below each column on smaller screens */
+}
+
+@media (min-width: 768px) {
+    .about-page-content .row.justify-content-center .row > [class^="col-md-"] {
+        margin-bottom: 0; /* Remove bottom margin on larger screens */
+    }
+}
+
+/* Adjust spacing for the last text-center section with call to action */
+.about-page-content .text-center:last-of-type {
+     margin-top: 2.5rem; /* Further reduce margin */
+     padding-top: 1.5rem; /* Further reduce padding above this section */
+     border-top: 1px solid #eee; /* Add a light border above */
+}
+
+.about-page-content .text-center:last-of-type h2 {
+    font-size: 1.6rem; /* Further adjust heading size in this section */
+    margin-bottom: 1rem; /* Further reduce margin */
+}
+
+.about-page-content .text-center:last-of-type .btn {
+    margin-top: 0.6rem; /* Further reduce space above buttons */
+}
+
+@media (max-width: 768px) {
+    .about-page-content {
+        padding-top: 1rem;
+    }
+    .about-page-content .container {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .about-page-content h2 {
+        font-size: 2rem;
+    }
+     .about-page-content h3 {
+        font-size: 1.6rem;
+    }
+     .about-page-content h4 {
+        font-size: 1.3rem;
+    }
+    .about-page-content .row.mt-5,
+    .about-page-content hr.my-5,
+    .about-page-content .text-center:last-of-type {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+     .about-page-content .row.justify-content-center .row {
+       margin-top: 1.5rem; 
+     }
+    .about-page-content .btn-lg {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+    .about-page-content .text-center:last-of-type {
+         margin-top: 3rem;
+         padding-top: 2rem;
+    }
+    .about-page-content .text-center:last-of-type h2 {
+        font-size: 1.8rem;
+    }
+     .about-page-content .text-center:last-of-type .btn {
+        margin-top: 0.8rem;
+    }
+}
+
+/* Styling for the statistic cards */
+.about-stat-card {
+    background-color: #fff; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 2rem; /* Padding inside the card */
+    margin-bottom: 2rem; /* Space below cards on smaller screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center align content */
+}
+
+@media (min-width: 768px) {
+    .about-page-content .row.justify-content-center .row > [class^="col-md-"] {
+        margin-bottom: 0; /* Remove bottom margin on larger screens */
+    }
+    .about-stat-card {
+         margin-bottom: 0; /* Remove bottom margin on larger screens */
+    }
+}
+
+/* Style for icons within the stat cards */
+.about-stat-card i {
+    color: var(--primary-color); /* Use primary color for icons */
+    margin-bottom: 1rem; /* Space below icons */
+} 

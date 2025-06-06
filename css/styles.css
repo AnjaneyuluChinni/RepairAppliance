@@ -1,0 +1,440 @@
+/* Global Styles */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-color: #1f2937;
+    --light-bg: #f3f4f6;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 0.95rem; /* Decrease base font size */
+}
+
+/* Navigation */
+.navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.1rem; /* Decrease brand font size */
+    line-height: 1.2;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-brand span {
+    font-size: 1.5rem; /* Decrease larger part of brand font size */
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 0.9rem; /* Further decrease nav link font size */
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+    color: var(--text-color);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 3rem; /* Reduce top padding for less space between sections */
+    padding-bottom: 3rem; /* Reduce bottom padding for less space between sections */
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.hero-section h1 {
+    color: var(--text-color);
+    margin-bottom: 5.5rem; /* Further increase margin below hero heading */
+    font-size: 40px; /* Set hero heading font size to 40px */
+}
+
+.hero-section p {
+    font-size: 20px; /* Set hero paragraph font size to 20px */
+    margin-bottom: 6rem; /* Further increase margin below hero paragraph */
+}
+
+/* Services Section */
+#services {
+    padding-top: 2rem; /* Further reduce padding */
+    padding-bottom: 2rem; /* Further reduce padding */
+    background-color: #e0f7fa; /* Light blue background */
+}
+
+.services-section h2 {
+    font-size: 4.2rem; /* Adjust services section heading */
+    margin-bottom: 11rem; /* Further increase margin below services heading */
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-body {
+    padding: 1rem;
+    height: 15rem; /* Further increase padding inside service cards */
+}
+
+/* About Section */
+#about {
+    padding-top: 2rem; /* Further reduce padding */
+    padding-bottom: 2rem; /* Further reduce padding */
+}
+
+.about-section h2 {
+    margin-bottom: 10rem; /* Further increase margin below about heading */
+}
+
+.bg-light {
+    background-color: var(--light-bg) !important;
+}
+
+/* Contact Form */
+.form-control {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.3rem 0.7rem; /* Make buttons even smaller */
+    border-radius: 0.4rem; /* Slightly smaller border radius */
+    font-size: 13px; /* Reduce button font size */
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Hover effect for light buttons in intro section */
+.intro-details-section .btn-light:hover {
+    background-color: var(--primary-color); /* Change background to primary color */
+    color: white; /* Change text color to white */
+    border-color: var(--primary-color); /* Match border color */
+    transform: translateY(-2px); /* Add a slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow effect */
+}
+
+/* Contact Info */
+#contact {
+    padding-top: 2rem; /* Further reduce padding */
+    padding-bottom: 2rem; /* Further reduce padding */
+}
+
+.contact-section h2 {
+    margin-bottom: 11rem; /* Further increase margin below contact heading */
+}
+
+.contact-info {
+    padding: 6rem; /* Further increase padding inside contact info box */
+    background-color: var(--light-bg);
+    border-radius: 1rem;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    padding-top: 1rem; /* Further reduce padding */
+    padding-bottom: 1rem; /* Further reduce padding */
+    background-color: #1f2937 !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+        padding-top: 4rem;
+    }
+    
+    .hero-section img {
+        margin-top: 2rem;
+    }
+    
+    .contact-info {
+        margin-top: 2rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Sticky CTA Bar */
+.sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    transform: translateY(100%); /* Initially hidden below the viewport */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.sticky-cta.show {
+    transform: translateY(0); /* Slide up into view */
+}
+
+.sticky-cta p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.sticky-cta .btn {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    font-weight: 600;
+}
+
+.sticky-cta .btn:hover {
+    background-color: var(--light-bg);
+}
+
+/* Dropdown on hover (Desktop only) */
+@media (min-width: 992px) { /* Bootstrap's 'lg' breakpoint */
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0; /* Remove the space between button and dropdown */
+    }
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: black; /* Set background to black */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.2s ease;
+    color: white; /* Set text color to white for readability on black background */
+    border-bottom: 1px solid #333; /* Add a subtle line between items */
+}
+
+.dropdown-item:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+.dropdown-item:hover {
+    background-color: #333; /* Darker grey on hover */
+    color: white; /* Keep text white on hover */
+}
+
+/* Adjust nav-link color when dropdown is open on desktop */
+@media (min-width: 992px) {
+    .nav-item.dropdown.show > .nav-link {
+        color: var(--primary-color) !important;
+    }
+}
+
+/* Intro Details Section Custom Styling */
+.intro-details-section {
+    padding: 3rem 0;
+}
+
+.intro-details-section h1 {
+     /* Remove margin-bottom */
+    padding-bottom: 1rem; /* Add padding below heading */
+    font-size: 40px;
+    padding-top: 1rem; /* Set heading font size */
+}
+
+.intro-details-section p {
+    margin-bottom: 0; /* Remove margin-bottom */
+    padding-bottom: 1rem; /* Add padding below paragraph */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px; /* Set paragraph font size */
+}
+
+.intro-details-section h2 {
+    margin-bottom: 0; /* Remove margin-bottom */
+    padding-bottom: 1rem; /* Add padding below phone number */
+    font-size: 50px; /* Set phone number font size to 50px */
+}
+
+.intro-details-section .text-center.my-4 {
+    border-top: none !important; /* Remove the horizontal line */
+}
+
+.intro-details-section .d-flex {
+    margin-top: 3rem; /* Further increase space above buttons */
+    gap: 1.5rem; /* Keep gap between buttons */
+    padding-bottom: 0; /* No padding below buttons */
+}
+
+/* Responsive adjustments for intro section */
+@media (max-width: 768px) {
+    .intro-details-section {
+        padding-top: 0;
+        padding-bottom: 3rem;
+    }
+
+    .intro-details-section h1 {
+        font-size: 35px;
+    }
+
+    .intro-details-section h2 {
+        font-size: 45px;
+    }
+
+    .intro-details-section p {
+         font-size: 22px;
+    }
+
+    .intro-details-section .d-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.8rem; /* Adjust space above buttons */
+    }
+
+    .intro-details-section .btn-lg {
+        width: 90%; /* Adjust button width on mobile */
+        font-size: 18px; /* Adjust button font size on mobile */
+    }
+}
+
+/* Add margin below the fixed navbar to push the intro section down */
+.content-below-fixed-navbar {
+    margin-top: 80px; /* Explicitly set margin-top based on estimated navbar height */
+}
+
+/* Adjust top padding for content below the intro section */
+.hero-section {
+    padding-top: 1rem; /* Adjust spacing between intro section and hero section */
+}
+
+/* Remove the old spacing class */
+.content-below-header {
+    padding-top: 0 !important; /* Remove padding added by the old class */
+}
+
+/* Adjust spacing for smaller screens */
+@media (max-width: 991.98px) { /* Below Bootstrap's 'lg' breakpoint */
+    .content-below-fixed-navbar {
+        margin-top: 7rem; /* Significantly increased adjustment for stacked navbar on smaller screens */
+    }
+}
+
+/* Stats Section with Background Image */
+
+
+.stats-background-section .stat-card {
+    background-color: #fff; /* White background for cards */
+    border-radius: 15px; /* Rounded corners */
+    padding: 2rem; /* Padding inside the card */
+    margin-bottom: 2rem; /* Space below cards on smaller screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center align content */
+    height: 300px;
+}
+
+@media (min-width: 768px) {
+    .stats-background-section .stat-card {
+         margin-bottom: 0; /* Remove bottom margin on larger screens */
+    }
+}
+
+/* Style for icons within the stat cards */
+.stats-background-section .stat-card i {
+    color: var(--primary-color); /* Use primary color for icons */
+    margin-bottom: 1rem; /* Space below icons */
+}
+
+.stats-background-section .stat-card h3 {
+    font-size: 1.2rem; /* Adjust heading size */
+    margin-bottom: 0.5rem; /* Space below heading */
+    color: var(--text-color); /* Use text color variable */
+}
+
+.stats-background-section .stat-card p {
+    font-size: 0.9rem; /* Adjust paragraph font size */
+    line-height: 1.5; /* Adjust line height */
+    color: var(--text-color); /* Use text color variable */
+}
+
+/* Reduce margin below main sections */
+.intro-details-section, .hero-section, .stats-background-section, #services, #about, #contact {
+    margin-bottom: 0.5rem; /* Further reduced margin for less space */
+}
